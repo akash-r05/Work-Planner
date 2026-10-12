@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0B1020;
+    color: #F1F5F9;
+    overflow-x: hidden;
+  }
+}
+
+/* Spatial Productivity 3D CSS Design System */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-4 {
+  transform: translateZ(16px);
+}
+
+.translate-z-8 {
+  transform: translateZ(32px);
+}
+
+.translate-z-12 {
+  transform: translateZ(48px);
+}
+
+.translate-z-negative {
+  transform: translateZ(-20px);
+}
+
+/* 3D Interactive Card Lift */
+.card-3d-spatial {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  will-change: transform;
+}
+
+.card-3d-spatial:hover {
+  transform: translateY(-4px) rotateX(2deg) rotateY(-1deg);
+  box-shadow: 0 20px 35px -10px rgba(139, 92, 246, 0.15), 0 0 1px 1px rgba(139, 92, 246, 0.2);
+}
+
+/* Soft glassmorphism panel */
+.glass-panel {
+  background: rgba(20, 27, 45, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(26, 35, 58, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4), 0 0 25px -5px rgba(139, 92, 246, 0.1);
+}
+
+.glass-panel-subtle {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Light mode overrides when html does not have dark class */
+html:not(.dark) body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+html:not(.dark) .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+html:not(.dark) .glass-panel-elevated {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.08), 0 0 20px rgba(139, 92, 246, 0.05);
+}
+
+html:not(.dark) .glass-panel-subtle {
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Tabular figures for all numeric displays */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
